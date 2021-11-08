@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Basic Embed</title>
+        <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.18.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+        <script type="text/javascript">
+            var dashboard
+            function onDashboardLoad(payload) {
+                console.log("Do something when the dashboard is fully loaded.");
+            }
+
+            function onError(payload) {
+                console.log("Do something when the dashboard fails loading");
+            }
+
+            function embedDashboard() {
+                var containerDiv = document.getElementById("embeddingContainer");
+                var options = {
+                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/ed56cca7e73846b7b3c9097df314af26/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABePqDuqoGLPGp87BRsbW6X7wAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBppPIBMm14wID_S6nxsbegQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDAC4kFQKFgG6K20wTgIBEIA7spOgfz203xBR7XOjeHn8XWokm9jnxQaecUsNdVNcDssdx64XvWKT8NORrFsdl2wR7SIpao546AKqJGYCAAAAAAwAABAAAAAAAAAAAAAAAAAA6qpo1cBCt9sAZk_40NqktP____8AAAABAAAAAAAAAAAAAAABAAAA5tzGdauqmJHA1BHlFGaE0ZydjeS3JDjvtyA4_VIywuMvmRk9jlSXJyRZX87Lm5g7xSJmRUgk-DlCL6iVST4EQh8AkBpcL-uXSXhH-3ALWOU0WAulTxQMzJkFQxFKJjEcE-tOk-YgYyKYy7v1LIMq3qIfzeZC6yj2Ip4OCWgDaAB6mdbSBnec2ZMOE8Fzch4qRorrG0Ap22oMcL9Vld0avNCiwZjNzAjjVULgR1wxs7Fhv0zhDLkg1F2x30A1-ikLzYnAIB-kVw-YRWpw_wsy1GrjUteJg4VgDiYdzXdmBox7zXMvJajB-PzoQYtNAAwmjbH1y1fbeA%3D%3D&identityprovider=quicksight&isauthcode=true",
+                    container: containerDiv,
+                    parameters: {
+                        country: "United States"
+                    },
+                    scrolling: "no",
+                    height: "700px",
+                    width: "1000px",
+                    locale: "en-US",
+                    footerPaddingEnabled: true
+                };
+                dashboard = QuickSightEmbedding.embedDashboard(options);
+                dashboard.on("error", onError);
+                dashboard.on("load", onDashboardLoad);
+            }
+
+            function onCountryChange(obj) {
+                dashboard.setParameters({country: obj.value});
+            }
+        </script>
+    </head>
+
+    <body onload="embedDashboard()">
+        <span>
+            <label for="country">Country</label>
+            <select id="country" name="country" onchange="onCountryChange(this)">
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </span>
+        <div id="embeddingContainer"></div>
+    </body>
+
+    </html>
