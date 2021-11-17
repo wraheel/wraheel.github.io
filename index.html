@@ -17,26 +17,7 @@
             function embedDashboard() {
                 var containerDiv = document.getElementById("embeddingContainer");
                 var options = {
-                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/deabd9e2db5b448bba6c10951bb6ea73/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeB_YwzZ3plYh0wZNyS2LD-AAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBwpwraILXfZsbzdQMiROEowAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDApGiYnLA33fHXtszgIBEIA7trZuaTITM2myXG5UzLh4dFhvitpWkcd1BjDgmWnDXQjKMhL2jwwFAUPsr_X9t9tQlJjjta6lZdUKRE8CAAAAAAwAABAAAAAAAAAAAAAAAAAAqms5MgyWlEx3GOUmnR9JuP____8AAAABAAAAAAAAAAAAAAABAAAA5h60Gg7EnuvQPgIUfzmUB0qaAsu1u0V2aMebEB4oDv7-PbpU02UnmdKh01ZZ-qccYKGiQHfP7rwhQqBDmG-dd7unf-unrs4Y0lgP6gcyczDJi1CTfJyHV6tM014jwNNdfiXMz9KpwGS3BIXPWmMLFsz3DgQ3ePz7d6Yj1muIQInLpll9UA2sHarkf_QzVtllxjlU7BQzPLngm3nB1_gH5XAKkflgSyiwunSCyLeVe2TKGTgbvh5jrsp2F74MzExfSGQVAArCdm0fvdNNXezVJHSU1Jzy3DfUc7JJy2EKzYWsMXK3Zpi3tDBqxJuUATTWFzrpa1-8kg%3D%3D&identityprovider=quicksight&isauthcode=true",
-                    container: containerDiv,
-                    parameters: {
-                        country: "United States"
-                    },
-                    scrolling: "no",
-                    height: "700px",
-                    width: "1000px",
-                    locale: "en-US",
-                    footerPaddingEnabled: true
-                };
-                dashboard = QuickSightEmbedding.embedDashboard(options);
-                dashboard.on("error", onError);
-                dashboard.on("load", onDashboardLoad);
-            }
-
-            function embedDashboard2() {
-                var containerDiv = document.getElementById("embeddingContainer2");
-                var options = {
-                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/deabd9e2db5b448bba6c10951bb6ea73/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeB_YwzZ3plYh0wZNyS2LD-AAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBwpwraILXfZsbzdQMiROEowAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDApGiYnLA33fHXtszgIBEIA7trZuaTITM2myXG5UzLh4dFhvitpWkcd1BjDgmWnDXQjKMhL2jwwFAUPsr_X9t9tQlJjjta6lZdUKRE8CAAAAAAwAABAAAAAAAAAAAAAAAAAAqms5MgyWlEx3GOUmnR9JuP____8AAAABAAAAAAAAAAAAAAABAAAA5h60Gg7EnuvQPgIUfzmUB0qaAsu1u0V2aMebEB4oDv7-PbpU02UnmdKh01ZZ-qccYKGiQHfP7rwhQqBDmG-dd7unf-unrs4Y0lgP6gcyczDJi1CTfJyHV6tM014jwNNdfiXMz9KpwGS3BIXPWmMLFsz3DgQ3ePz7d6Yj1muIQInLpll9UA2sHarkf_QzVtllxjlU7BQzPLngm3nB1_gH5XAKkflgSyiwunSCyLeVe2TKGTgbvh5jrsp2F74MzExfSGQVAArCdm0fvdNNXezVJHSU1Jzy3DfUc7JJy2EKzYWsMXK3Zpi3tDBqxJuUATTWFzrpa1-8kg%3D%3D&identityprovider=quicksight&isauthcode=true",
+                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/72362e6d81894810986f3f3c7708226d/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeIVeaDvDXeMPUNBlIS8wRqYAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBKt47mzKjujSwAMWOStDfTQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDBGVLgWDiZnh4m_tHgIBEIA7oyHQaBGfw8q0aZVMqaypNuVAVbnSMZwrlSYAde8ZAuWuzM30cVRzCPD2gY8jfA1h3azIxchDGl_ZXbwCAAAAAAwAABAAAAAAAAAAAAAAAAAAdgsCvtKHFppcxbSr6R4fSv____8AAAABAAAAAAAAAAAAAAABAAAA5qMSXkz5Z29wE7dQJhtzCTuDK57NCU0fqtbJRwzR7m5B-SFKzYp967Ayt7KqcGdr1-4jRJ7L0XrBaOX71fnCbpJAx3OLw7rfijqo3XqqdG4aPhuuqbghMQWt3gQIa5s_M1JHDg1Ij25vXB6JS50ZXqJHl4CWbUm1oRMbjpLg51VYi57Y5EYkWZoQ9tekiW3pXWeJCPaONLnzTOw61LW2tmf0Y5dyIKeF62PPaR3BSpUecV4l4Bk1-UALwVDq-JQf8MS5hGrA-odsNfrKtTcQ8yiHCwL6M2hzz4jyyMzFOZXcVXiaEtOVQT4BZ7KeMPAmoSqxKwMi-A%3D%3D&identityprovider=quicksight&isauthcode=true",
                     container: containerDiv,
                     parameters: {
                         country: "United States"
@@ -59,10 +40,15 @@
     </head>
 
     <body onload="embedDashboard()">
+        <span>
+            <label for="country">Country</label>
+            <select id="country" name="country" onchange="onCountryChange(this)">
+                <option value="United States">United States</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </span>
         <div id="embeddingContainer"></div>
-    </body>
-    <body onload="embedDashboard2()">
-        <div id="embeddingContainer2"></div>
     </body>
 
     </html>
