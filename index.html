@@ -17,7 +17,26 @@
             function embedDashboard() {
                 var containerDiv = document.getElementById("embeddingContainer");
                 var options = {
-                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/c7404b2917444082b9f5ef52c087c80c/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeNu9QqfwLg147GL41N83JXkAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBxUpTxNoPycwfxCn585oJXAAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDECYelbGQ4E9roXktgIBEIA75KG3P-AIZ2E5QUDYPWHbNlRJGkghbczV1Jj6b5GfomnfkIGYAA3ygBUhiH6WSB2GUntAYfJ7bgCppAkCAAAAAAwAABAAAAAAAAAAAAAAAAAAAeq7hWgk5e72UMR3rkdWhf____8AAAABAAAAAAAAAAAAAAABAAAA5ugXRK4ooDiCIofVTxyZjZkVqGNbrxoXPmIUTgR2tppBEvk-pW5eI2hV6ZlVXN4Ql6H8GQ9-qEh9x1M2wxOs45se5I7SfZaVa4qQpnJDNEoQzmO_erPA4qn3KpRQtuMmwv2rbXAo0tvx-lct8BkwWxvb-_ZKlzhAYGxQ0BxMM4KFxWAEb2ex8dRGSIUw2xNuKxDtNf7diKAg77z3SKqBNZaV5VUY5y4O-ZRb1U-0Ev-gw_lUct2KWb-8L4dB7hRpSVuWrgcveTLChe5scEU-lf3mpiqOLFeIp78kClbwACkdD7-3_8tpf-SS_OPoCalPDoVE73whrQ%3D%3D&identityprovider=quicksight&isauthcode=true",
+                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/21e91d49fecb4b7c99f0b1a5d25aa8b7/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeD9yq1heXMgdFqxp4q8YylsAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBoqqBYedq_VXb9fDokvl9kAAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDALXNdD24eiO8pqTfAIBEIA7GuiGalp2kXrNVjol59gIqVHgHS-i9JTDoB7wL20o7e1mjivTalxYPnhN-Y9XA3LrifzZDR5nMmAsOZsCAAAAAAwAABAAAAAAAAAAAAAAAAAAPQ-zMjsREQA15XSiUq6laf____8AAAABAAAAAAAAAAAAAAABAAAA5jIOFxJOmEK4JbkKgsd1Q96FyRd5hrHa0fygFRRfKOZaJo5NVrKfsvG7HqulJZpV2cI4yNq9vATHJy9EkXgMXyekOiaSb9uY4yg3avYitU7O0TS2dgZNcTZVhB6oZRcmhjOuFLnMB8hvhIIVh6EQZR7M-Jrh8D7OtZ7Q4s_rUMLZhCXW6WSoaCTAx7y7WNvTD-xm01jpYweIgNNttcRKtKQDAsosCo0B59BAyAEJwBB56ZHusmduh-TOKAh1RSo1luZlR4GOibX88YH3jw7FxH655IoqLOgxCkojTmWgRlUptWDEKAqK4DXEp_UkX1-N1qI6rPeQGw%3D%3D&identityprovider=quicksight&isauthcode=true",
+                    container: containerDiv,
+                    parameters: {
+                        country: "United States"
+                    },
+                    scrolling: "no",
+                    height: "700px",
+                    width: "1000px",
+                    locale: "en-US",
+                    footerPaddingEnabled: true
+                };
+                dashboard = QuickSightEmbedding.embedDashboard(options);
+                dashboard.on("error", onError);
+                dashboard.on("load", onDashboardLoad);
+            }
+
+            function embedDashboard2() {
+                var containerDiv = document.getElementById("embeddingContainer2");
+                var options = {
+                    url: "https://us-east-1.quicksight.aws.amazon.com/embed/21e91d49fecb4b7c99f0b1a5d25aa8b7/dashboards/7ce1b2d4-4859-4b35-ab8c-b8a1004c46cc?code=AYABeD9yq1heXMgdFqxp4q8YylsAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4EeOLgrUr51nsHbjCawUUKjOqEm284CNxqOjvtm6TGiwBoqqBYedq_VXb9fDokvl9kAAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDALXNdD24eiO8pqTfAIBEIA7GuiGalp2kXrNVjol59gIqVHgHS-i9JTDoB7wL20o7e1mjivTalxYPnhN-Y9XA3LrifzZDR5nMmAsOZsCAAAAAAwAABAAAAAAAAAAAAAAAAAAPQ-zMjsREQA15XSiUq6laf____8AAAABAAAAAAAAAAAAAAABAAAA5jIOFxJOmEK4JbkKgsd1Q96FyRd5hrHa0fygFRRfKOZaJo5NVrKfsvG7HqulJZpV2cI4yNq9vATHJy9EkXgMXyekOiaSb9uY4yg3avYitU7O0TS2dgZNcTZVhB6oZRcmhjOuFLnMB8hvhIIVh6EQZR7M-Jrh8D7OtZ7Q4s_rUMLZhCXW6WSoaCTAx7y7WNvTD-xm01jpYweIgNNttcRKtKQDAsosCo0B59BAyAEJwBB56ZHusmduh-TOKAh1RSo1luZlR4GOibX88YH3jw7FxH655IoqLOgxCkojTmWgRlUptWDEKAqK4DXEp_UkX1-N1qI6rPeQGw%3D%3D&identityprovider=quicksight&isauthcode=true",
                     container: containerDiv,
                     parameters: {
                         country: "United States"
@@ -49,6 +68,7 @@
             </select>
         </span>
         <div id="embeddingContainer"></div>
+        <div id="embeddingContaine2"></div>
     </body>
 
     </html>
